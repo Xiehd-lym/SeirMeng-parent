@@ -1,0 +1,42 @@
+spring:
+  application:
+    # 配置中心+注册中心
+    name: SeirMeng-test
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_zx_guarantee?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  # json的全局配置
+  jackson:
+    time-zone: GMT+8
+    date-format: java.text.SimpleDateFormat
+  profiles:
+    active: dev
+server:
+  port: 8081
+  servlet:
+    context-path: /SeirMeng-test
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    root: info
+
+signature:
+  appId: y02xMJ1c
+  accessKeyId: taRGPE8dPuJT
+  keySecret: O3DvH6R7kv3Jamsrs5kk2L34zNqc6zyw
+
+guarantee:
+  http:
+    addproduct:
+      baseUrl: http://testinsure.zxzk.cn/api/anhui_credit_investigation/insurance/add_product
+    apply:
+      baseUrl: http://testinsure.zxzk.cn/api/anhui_credit_investigation/insurance/apply
+
+
+
